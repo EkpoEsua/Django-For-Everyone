@@ -1,0 +1,10 @@
+#ignore all .mp4 video files
+*.mp4
+
+#ignore the folder containing the python virtual environment
+venv/
+dj4e-samples/
+
+__pycache__
+*.swp
+*.sqlite3
