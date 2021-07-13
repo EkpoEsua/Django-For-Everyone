@@ -15,8 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import url
+from django.views.static import serve
+import os
+
+# print(__file__)
+# Up two folders to serve "site" content
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SITE_ROOT = os.path.join(BASE_DIR, 'site')
+# print(SITE_ROOT)
 
 urlpatterns = [
     path("polls/", include('polls.urls')),
     path('admin/', admin.site.urls),
+    url(r'^site/(?P<path>.*)$', serve,
+        {'document_root': SITE_ROOT, 'show_indexes': True},
+        name='site_path'
+    ),
+
 ]
