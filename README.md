@@ -11,6 +11,7 @@ A course on django by Dr. Chucks - [dj4e](https://dj4e.com)
 * Use of Django ORM to create models, perform CRUD actions, and perform Databse migrations.
 * Use of Views and Templates.
 * Understanding and use of Django Class-based views.
+* Right techniques of dealing with forms and form data in Django.
 
 
 
