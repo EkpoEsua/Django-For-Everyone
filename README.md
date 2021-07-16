@@ -12,6 +12,9 @@ A course on django by Dr. Chucks - [dj4e](https://dj4e.com)
 * Use of Views and Templates.
 * Understanding and use of Django Class-based views.
 * Right techniques of dealing with forms and form data in Django.
+* Handling of cookies and session data.
+* Database design (one-to-many models, many-to-many models, database normalization - 3NF)
+* Preloading of data into the database using the `django_extensions` library.
 
 
 
