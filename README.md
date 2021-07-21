@@ -15,6 +15,7 @@ A course on django by Dr. Chucks - [dj4e](https://dj4e.com)
 * Handling of cookies and session data.
 * Database design (one-to-many models, many-to-many models, database normalization - 3NF)
 * Preloading of data into the database using the `django_extensions` library.
+* Dealing with Logins and Authentication of users on a Django backend.
 
 
 

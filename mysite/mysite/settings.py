@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'home.apps.HomeConfig',
     'django_extensions',
-    'unesco.apps.UnescoConfig'
+    'unesco.apps.UnescoConfig',
+    'autos.apps.AutosConfig',
+    'locations.apps.LocationsConfig',
+    'cats.apps.CatsConfig',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +130,5 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+APP_NAME = 'My Site'

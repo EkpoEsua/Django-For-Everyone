@@ -13,11 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
 from django.views.static import serve
-from django.views.generic.base import TemplateView
+from django.views.generic import TemplateView
 import os
 
 # print(__file__)
@@ -31,6 +32,11 @@ urlpatterns = [
     path("hello/", include("hello.urls")),
     path('', TemplateView.as_view(template_name='home/main.html')),
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('autos/', include('autos.urls')),
+    path('locations/', include('locations.urls')),
+    path('cats/', include('cats.urls')),
+
     url(r'^site/(?P<path>.*)$', serve,
         {'document_root': SITE_ROOT, 'show_indexes': True},
         name='site_path'
