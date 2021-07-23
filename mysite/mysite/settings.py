@@ -31,19 +31,27 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    # built-in django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
+
+    #third party apps
+    'django_extensions',
+    'crispy_forms',
+
+    #project apps
     'polls.apps.PollsConfig',
     'home.apps.HomeConfig',
-    'django_extensions',
     'unesco.apps.UnescoConfig',
     'autos.apps.AutosConfig',
     'locations.apps.LocationsConfig',
     'cats.apps.CatsConfig',
+    'ads.apps.AdsConfig',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +140,5 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 APP_NAME = 'My Site'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
