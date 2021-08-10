@@ -38,9 +38,13 @@ urlpatterns = [
     path('locations/', include('locations.urls')),
     path('cats/', include('cats.urls')),
     path('ads/', include('ads.urls')),
+    url(r'^oauth/', include('social_django.urls', namespace='social')),
 
     url(r'^site/(?P<path>.*)$', serve,
-        {'document_root': SITE_ROOT, 'show_indexes': True},
+        {
+            'document_root': SITE_ROOT,
+            'show_indexes': True
+        },
         name='site_path'
     ),
 
@@ -49,7 +53,8 @@ urlpatterns = [
 
 # Serve the favicon
 urlpatterns += [
-    path('favicon.ico', serve, {
+    path('favicon.ico', serve, 
+        {
             'path': 'favicon.ico',
             'document_root': os.path.join(BASE_DIR, 'home/static'),
         }
@@ -58,15 +63,15 @@ urlpatterns += [
 
 
 # # Switch to social login if it is configured - Keep for later
-# try:
-#     from . import github_settings
-#     social_login = 'registration/login_social.html'
-#     urlpatterns.insert(0,
-#                        path('accounts/login/', auth_views.LoginView.as_view(template_name=social_login))
-#                        )
-#     print('Using', social_login, 'as the login template')
-# except:
-#     print('Using registration/login.html as the login template')
+try:
+    from . import github_settings
+    social_login = 'registration/login_social.html'
+    urlpatterns.insert(0,
+                       path('accounts/login/', auth_views.LoginView.as_view(template_name=social_login))
+                       )
+    print('Using', social_login, 'as the login template')
+except:
+    print('Using registration/login.html as the login template')
 
 # References
 

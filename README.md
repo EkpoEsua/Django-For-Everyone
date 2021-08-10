@@ -19,6 +19,8 @@ A course on django by Dr. Chucks - [dj4e](https://dj4e.com)
 * Design and implement a CRUD app, using the related class views.
 * Create custom template tags and filters in Django.
 * Use of the crispy forms filters library to make pretty django forms.
+* Dealing with image contents in a model, and creating supporting forms and views.
+* Third party App login/signup integration using OAuth.
 
 
 

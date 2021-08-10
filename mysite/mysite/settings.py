@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     #third party apps
     'django_extensions',
     'crispy_forms',
+    'social_django',
 
     #project apps
     'polls.apps.PollsConfig',
@@ -77,6 +78,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
+                'home.context_processors.settings',
             ],
         },
     },
@@ -142,3 +146,18 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 APP_NAME = 'My Site'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+SOCIAL_AUTH_JSONFIELD_ENABLED = True
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.github.GithubOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+# Configure the social login
+try:
+    from . import github_settings 
+    SOCIAL_AUTH_GITHUB_KEY = github_settings.SOCIAL_AUTH_GITHUB_KEY
+    SOCIAL_AUTH_GITHUB_SECRET = github_settings.SOCIAL_AUTH_GITHUB_SECRET
+except:
+    print('When you want to use social login, please see dj4e-samples/github_settings-dist.py')
